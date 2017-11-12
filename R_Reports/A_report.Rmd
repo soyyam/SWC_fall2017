@@ -1,0 +1,26 @@
+---
+title: "A Useless Report"
+author: "ashley"
+date: "November 12, 2017"
+output: ioslides_presentation
+---
+
+# For 20007, the population in countries where the life expectancy is less than 50
+
+```{r setup, echo=FALSE}
+    library(ggplot2)
+```
+
+**Purpose:** To write a report about something
+
+```{r get_data, echo=FALSE}
+    gapminder <- read.table('C:/Users/Ashley/Desktop/SWC_fall2017/Data/gapminder.txt',header=TRUE)
+```
+
+```{r plot}
+    lifeExp_50_2007 <- gapminder[(gapminder$lifeExp<50)&(gapminder$year==2007),]
+    ggplot(data=lifeExp_50_2007,aes(x=lifeExp,y=pop)) +
+      geom_point()
+```
+
+**Conclusion:** No relationship

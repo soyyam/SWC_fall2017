@@ -1,0 +1,30 @@
+---
+title: "Introduction to R Reports"
+author: "ashley"
+date: "November 12, 2017"
+output: html_document
+---
+# The relationship between GDP per capita and life expectancy worldwide
+
+**Purpose:** To figure out the relationship between two variables.
+
+1. Load the gapminder data (web).
+2. Figured out the mean life expectancy per country.
+3. I plotted the data.
+
+```{r load_packages,echo=FALSE}
+    library(ggplot2)
+```
+
+```{r load_data, echo=FALSE}
+gapminder <- read.table('C:/Users/Ashley/Desktop/SWC_fall2017/Data/gapminder.txt',header=TRUE)
+```
+
+```{r plot_data}
+    ggplot(data=gapminder,aes(x=gdpPercap,y=lifeExp,color=country)) +
+      geom_point() +
+      theme(legend.position = "none") +
+      labs(x="Year",y="Life Expectancy",title="Figure 1.") +
+      scale_x_log10()
+```
+
