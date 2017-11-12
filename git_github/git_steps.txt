@@ -1,0 +1,10 @@
+How to track files inside git...
+
+git add
+git commit -m "your version messages"
+
+can check status - 
+git status
+
+can check versions - 
+git log (--oneline)use git init one time
